@@ -6,6 +6,7 @@ import redirectRouter from "./routes/redirect.routes";
 import { errorHandler } from "./middleware/error.middleware";
 import swaggerUi from "swagger-ui-express";
 import { swaggerSpec } from "./docs/swagger";
+import healthRoutes from "./routes/health.routes";
 const app = express();
 app.use(cors());
 app.use(logger);
@@ -15,6 +16,7 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerSpec)
 );
+app.use("/health", healthRoutes);
 app.use("/api/v1/urls", urlRouter);
 app.use("/", redirectRouter);
 app.get("/", (req, res) => {

@@ -8,8 +8,7 @@ const envSchema = z.object({
   BASE_URL: z.url(),
   NODE_ENV: z.enum(['development', 'production', 'test']),
   MONGODB_URI: z.string().min(1),
-  REDIS_HOST: z.string().min(1),
-  REDIS_PORT: z.coerce.number(),
+  REDIS_URL: z.url(),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
