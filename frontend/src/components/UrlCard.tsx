@@ -26,7 +26,7 @@ export default function UrlCard({ data, onClear }: Props) {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(
-        `http://localhost:5000/${urlData.shortCode}`
+        `https://distributed-url-shortener-pwh5.onrender.com/${urlData.shortCode}`
       );
 
       toast.success("Short URL copied to clipboard!");
@@ -78,12 +78,12 @@ export default function UrlCard({ data, onClear }: Props) {
           <p className="text-gray-400">Short URL</p>
 
           <a
-            href={`http://localhost:5000/${urlData.shortCode}`}
+            href={`https://distributed-url-shortener-pwh5.onrender.com/${urlData.shortCode}`}
             target="_blank"
             rel="noreferrer"
             className="text-green-400"
           >
-            http://localhost:5000/{urlData.shortCode}
+            https://distributed-url-shortener-pwh5.onrender.com/{urlData.shortCode}
           </a>
         </div>
 
