@@ -10,6 +10,12 @@ type Props = {
 export default function UrlCard({ data, onClear }: Props) {
   const [urlData, setUrlData] = useState(data);
 
+  // Backend URL from environment
+  const backendUrl = import.meta.env.VITE_API_URL;
+
+  // Complete short URL
+  const shortUrl = `${backendUrl}/${urlData.shortCode}`;
+
   useEffect(() => {
     async function fetchDetails() {
       try {
@@ -25,9 +31,7 @@ export default function UrlCard({ data, onClear }: Props) {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(
-        `https://distributed-url-shortener-pwh5.onrender.com/${urlData.shortCode}`
-      );
+      await navigator.clipboard.writeText(shortUrl);
 
       toast.success("Short URL copied to clipboard!");
     } catch (error) {
@@ -78,12 +82,12 @@ export default function UrlCard({ data, onClear }: Props) {
           <p className="text-gray-400">Short URL</p>
 
           <a
-            href={`https://distributed-url-shortener-pwh5.onrender.com/${urlData.shortCode}`}
+            href={shortUrl}
             target="_blank"
             rel="noreferrer"
             className="text-green-400"
           >
-            https://distributed-url-shortener-pwh5.onrender.com/{urlData.shortCode}
+            {shortUrl}
           </a>
         </div>
 
