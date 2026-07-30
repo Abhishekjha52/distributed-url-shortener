@@ -119,7 +119,6 @@ Client
 → MongoDB
 → Return Short URL
 
----
 
 ### URL Redirection
 
