@@ -19,6 +19,15 @@ Designed using scalable backend engineering principles including layered archite
 
 > GIF Preview Coming Soon
 
+## 🔗 Quick Links
+
+| Resource | Link |
+|----------|------|
+| 🌐 Live Application | https://distributed-url-shortener-pi.vercel.app |
+| 🚀 Backend API | https://distributed-url-shortener-pwh5.onrender.com |
+| 📚 Swagger Docs | https://distributed-url-shortener-pwh5.onrender.com/api-docs |
+| 💻 GitHub Repository | https://github.com/Abhishekjha52/distributed-url-shortener |
+
 ## ✨ Overview
 
 This project demonstrates how a production-grade URL shortening service can be built using modern backend technologies and clean software architecture.
@@ -76,23 +85,24 @@ The application generates short URLs, redirects users to the original destinatio
 ## 🏗️ System Architecture
 
 ```text
-               User
-                 │
-                 ▼
-        React Frontend (Vite)
-                 │
-          HTTP REST API
-                 │
-                 ▼
-        Express.js Backend
-                 │
-        ┌────────┴─────────┐
-        ▼                  ▼
-     Redis Cache       MongoDB
-        │                  │
-        └────────┬─────────┘
-                 ▼
-          URL Analytics
+                 User
+                  │
+                  ▼
+      React Frontend (Vercel)
+                  │
+           REST API Request
+                  │
+                  ▼
+     Express Backend (Render)
+                  │
+         ┌────────┴────────┐
+         ▼                 ▼
+ Upstash Redis        MongoDB Atlas
+    (Cache)            (Database)
+         │                 │
+         └────────┬────────┘
+                  ▼
+            URL Analytics
 ```
 
 ---
@@ -182,7 +192,7 @@ distributed-url-shortener/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-github-username>/distributed-url-shortener.git
+git clone https://github.com/Abhishekjha52/distributed-url-shortener.git
 cd distributed-url-shortener
 ```
 
@@ -207,13 +217,12 @@ Create a `.env` file inside the project root.
 ```env
 PORT=5000
 
-MONGO_URI=mongodb://localhost:27017/url-shortener
+MONGODB_URI=mongodb://localhost:27017/url-shortener
 
 REDIS_URL=redis://localhost:6379
 
 BASE_URL=http://localhost:5000
 
-JWT_SECRET=your-secret-key
 ```
 
 ### 5. Start the backend
@@ -267,12 +276,31 @@ The following services will start automatically:
 
 ---
 
+## ☁️ Deployment
+
+| Component | Platform |
+|-----------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | MongoDB Atlas |
+| Cache | Upstash Redis |
+
+---
+
 ## 📚 API Documentation
 
 Swagger UI is available after starting the backend.
 
+### Local
+
 ```
 http://localhost:5000/api-docs
+```
+
+### Production
+
+```
+https://distributed-url-shortener-pwh5.onrender.com/api-docs
 ```
 
 The API documentation includes:
@@ -296,33 +324,45 @@ The API documentation includes:
 
 ## 📷 Screenshots
 
-### Frontend
+### 🖥️ Frontend Home
 
-> _Coming Soon_
-
----
-
-### Swagger API Documentation
-
-> _Coming Soon_
+![Frontend Home](docs/screenshots/home.png)
 
 ---
 
-### Docker Containers
+### 🔗 Short URL Generated
 
-> _Coming Soon_
-
----
-
-### Redis Cache
-
-> _Coming Soon_
+![Generated URL](docs/screenshots/generated.png)
 
 ---
 
-### MongoDB
+### 📚 Swagger API Documentation
 
-> _Coming Soon_
+![Swagger](docs/screenshots/swagger.png)
+
+---
+
+### ☁️ Backend Deployment (Render)
+
+![Render](docs/screenshots/render.png)
+
+---
+
+### ▲ Frontend Deployment (Vercel)
+
+![Vercel](docs/screenshots/vercel.png)
+
+---
+
+### 🍃 MongoDB Atlas
+
+![MongoDB](docs/screenshots/mongodb.png)
+
+---
+
+### ⚡ Upstash Redis
+
+![Redis](docs/screenshots/redis.png)
 
 ---
 
@@ -381,8 +421,8 @@ This project is licensed under the MIT License.
 
 **Abhishek Jha**
 
-- GitHub: [https://github.com/Abhishekjha52](https://github.com/Abhishekjha52)
-- LinkedIn: [https://www.linkedin.com/in/abhishekjha52/](https://www.linkedin.com/in/abhishekjha5201/)
+- 💼 LinkedIn: https://www.linkedin.com/in/abhishekjha5201/
+- 🐙 GitHub: https://github.com/Abhishekjha52
 
 
 
