@@ -17,7 +17,8 @@ Designed using scalable backend engineering principles including layered archite
 
 ## 📸 Demo
 
-> GIF Preview Coming Soon
+![Distributed URL Shortener Demo](docs/demo.gif)
+
 
 ## 🔗 Quick Links
 
